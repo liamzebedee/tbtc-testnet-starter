@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -ex
 
 # Run without mining.
@@ -14,7 +14,7 @@ set -ex
 
 btcd \
     -C ./btcd.conf \
-    --datadir=./data --maxpeers=0 \
+    --datadir=./btcd_data --maxpeers=0 \
     --connect="1.1.1.1" \
-    --rpcquirks --debuglevel=debug \
+    --rpcquirks --debuglevel=debug 
     --generate --miningaddr=SRbmutoPPLLaXiUqpo9QChQuWzvkBkQDyP

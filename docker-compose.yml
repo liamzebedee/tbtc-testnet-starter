@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  
+  btcd:
+    build: ./btcd
+    command: ./run.sh
+    working_dir: /app
+    volumes:
+      - ./btcd/btcd_data:/app/btcd_data
+    ports:
+      - 18556:18556
+    network_mode: "host"
+    
+  btcwallet:
+    build: ./btcd
+    command: sh -c "sleep 1 && ./wallet.sh"
+    working_dir: /app
+    network_mode: "host"
+    ports:
+      - 18554:18554
+    volumes:
+      - ./btcd/btcwallet_data:/app/btcwallet_data

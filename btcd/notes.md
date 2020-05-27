@@ -3,13 +3,13 @@
 passphrase: 123
 
 Your wallet generation seed is:
-5528e389da93ee1ef7bccd9c586943e9b693f2090a31dbb8353c9d3673b1d40c
+ba6e163f704ccf591270b55809b98c0bf173e509511d8aebcabfd1d7e84c282f
 
 ```sh
 # Unlock local account for 600s.
 btcctl -C ./btcctl.conf --wallet walletpassphrase "123" 600    
 
-# Create bew account
+# Create new account
 btcctl -C ./btcctl.conf --wallet createnewaccount account1
 
 # Get a new address.
