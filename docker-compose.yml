@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  
+
   btcd:
     build: ./btcd
     command: ./run.sh
@@ -14,10 +14,32 @@ services:
     
   btcwallet:
     build: ./btcd
-    command: sh -c "sleep 1 && ./wallet.sh"
+    command: sh -c "sleep 3 && ./wallet.sh"
     working_dir: /app
     network_mode: "host"
     ports:
       - 18554:18554
     volumes:
       - ./btcd/btcwallet_data:/app/btcwallet_data
+    depends_on:
+      - btcd
+
+  electrumx:
+    build: ./docker-electrumx
+    command: sh -c "sleep 3 && init"
+    volumes:
+      - ./electrumx/electrumx_data:/data
+    network_mode: "host"
+    environment:
+      DAEMON_URL: admin1:123@127.0.0.1:18556
+      LOG_LEVEL: debug
+      SERVICES: tcp://0.0.0.0:50001,ssl://0.0.0.0:50002,ws://0.0.0.0:50003,wss://0.0.0.0:50004,rpc://0.0.0.0:8000
+      COIN: BitcoinSegwit
+      NET: simnet
+    ports:
+      - 50001:50001
+      - 50002:50002
+      - 50003:50003
+      - 50004:50004
+    depends_on:
+      - btcd

@@ -9,3 +9,11 @@ This repo sets up:
  * a Bitcoin testnet using btcd.
  * a local ElectrumX server.
  * pre-funded Bitcoin accounts for funding tBTC deposits.
+
+
+## Usage
+
+```sh
+# Start btcd, btcwallet, and ElectrumX server.
+$ docker-compose up
+```
