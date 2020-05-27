@@ -1,0 +1,3 @@
+[submodule "docker-electrumx/electrumx_src"]
+	path = docker-electrumx/electrumx_src
+	url = https://github.com/liamzebedee/electrumx.git
