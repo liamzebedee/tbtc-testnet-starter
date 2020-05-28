@@ -14,7 +14,10 @@ This repo sets up:
 Remaining to fix:
 
  - [ ] Publish changes for tbtc.js, to use the simnet config from `bcoin`.
- - [ ] tbtc.js fails at redemption when transaction is sent via simnet chain, with revert error "Tx spends the wrong UTXO"
+
+Known issues:
+
+- [ ] tbtc.js will fail redemption with "Tx spends the wrong UTXO", for [certain address types](https://github.com/liamzebedee/tbtc-testnet-starter/issues/1).
 
 ## Install.
 
