@@ -11,10 +11,6 @@ This repo sets up:
  * a local ElectrumX server, forked to work with btcd.
  * pre-funded Bitcoin account for funding tBTC deposits.
 
-Remaining to fix:
-
- - [ ] Publish changes for tbtc.js, to use the simnet config from `bcoin`.
-
 Known issues:
 
 - [ ] tbtc.js will fail redemption with "Tx spends the wrong UTXO", for [certain address types](https://github.com/liamzebedee/tbtc-testnet-starter/issues/1).
@@ -26,6 +22,8 @@ git clone https://github.com/liamzebedee/tbtc-testnet-starter
 cd tbtc-testnet-starter/
 git submodule update --init --recursive
 ```
+
+You must apply some changes to tbtc.js to use simnet addresses. See [this PR](https://github.com/keep-network/tbtc.js/pull/36). They are minor changes, you should be able to `git merge dimsimnet` in your `tbtc.js` repo and it will merge cleanly.
 
 ## Usage.
 
