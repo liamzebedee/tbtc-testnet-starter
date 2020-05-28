@@ -38,6 +38,34 @@ $ ./scripts/run-electrumx.sh
 
 The ElectrumX server will be running on ports 50001-50004. 
 
+## Configuring tBTC
+
+You must configure tbtc.js with the correct bitcoinNetwork and ElectrumX server.
+
+```js
+const tbtc = await TBTC.withConfig({
+    web3: web3,
+    bitcoinNetwork: "simnet",    // (1)
+    electrum: {
+        testnetWS: {             // (2)
+            server: "127.0.0.1",
+            port: 50003,
+            protocol: "ws"
+        },
+    }
+})
+```
+
+You must also configure the [tbtc-maintainer](https://github.com/keep-network/tbtc-maintainers) to connect to your local ElectrumX server. Edit your `config.toml`:
+
+```sol
+# Connection details of a Electrum Server.
+[electrum]
+    ServerHost  = "127.0.0.1"
+    ServerPort  = "50002"
+    Protocol    = "SSL" # TCP or SSL
+```
+
 ## Interacting with your bitcoin simnet.
 
 ```sh
