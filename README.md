@@ -54,3 +54,12 @@ $ docker exec -it btcd sh
   "7e4764ea96630a88c8cf2868393e72222b9f8f1a152f11c798ab717142ffbb98"
 ]
 ```
+
+## A brief explainer.
+
+`btcd` is an alternative to the bitcoind software. It features a separate server, `btcwallet`, that hosts a wallet RPC interface. It comes with a tool called `btcctl` to send RPC calls to the `btcd` and `btcwallet` daemons. 
+
+We run a testnet instance of the bitcoin network called simnet. Simnet has its own address prefix, different from Bitcoin Testnet and Bitcoin Mainnet. simnet is a btcd-only feature (it's not part of bitcoind/bitcoin core).
+
+ElectrumX doesn't support btcd out-of-the-box, and doesn't have a configuration for the simnet genesis. Hence, we use a forked version which is patched to support this.
+
