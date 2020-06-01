@@ -23,8 +23,6 @@ cd tbtc-testnet-starter/
 git submodule update --init --recursive
 ```
 
-You must apply some changes to tbtc.js to use simnet addresses. See [this PR](https://github.com/keep-network/tbtc.js/pull/36). They are minor changes, you should be able to `git merge dimsimnet` in your `tbtc.js` repo and it will merge cleanly.
-
 ## Usage.
 
 btcd and ElectrumX are both built using Docker images. No additional software is needed.
