@@ -11,10 +11,6 @@ This repo sets up:
  * a local ElectrumX server, forked to work with btcd.
  * pre-funded Bitcoin account for funding tBTC deposits.
 
-Known issues:
-
-- [ ] tbtc.js will fail redemption with "Tx spends the wrong UTXO", for [certain address types](https://github.com/liamzebedee/tbtc-testnet-starter/issues/1).
-
 ## Install.
 
 ```sh
